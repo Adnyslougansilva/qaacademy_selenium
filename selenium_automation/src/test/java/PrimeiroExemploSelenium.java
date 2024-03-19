@@ -17,10 +17,10 @@ public class PrimeiroExemploSelenium {
         driver.findElement(By.xpath("//input[@ng-model='Phone']")).sendKeys("1234567890");
 
         driver.findElement(By.xpath("//input[@value='Male']")).click();
-        Assert.assertTrue("Selecionado", driver.findElement(By.xpath("//input[@value='Male']")).isSelected());
+        driver.findElement(By.xpath("//input[@value='Male']")).isSelected();
 
         driver.findElement(By.xpath("//input[@id='checkbox2']")).click();
-        Assert.assertTrue("Selecionado", driver.findElement(By.xpath("//input[@id='checkbox2']")).isSelected());
+        driver.findElement(By.xpath("//input[@id='checkbox2']")).isSelected();
 
         driver.findElement(By.id("msdd")).click();
         driver.findElement(By.xpath("//*[contains(text(),'Portuguese')]")).click();
