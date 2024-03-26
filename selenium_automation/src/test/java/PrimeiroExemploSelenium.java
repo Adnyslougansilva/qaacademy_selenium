@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
+import java.time.Duration;
 
 public class PrimeiroExemploSelenium {
 
@@ -11,8 +12,8 @@ public class PrimeiroExemploSelenium {
     public void testSelenium () throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.automationtesting.in/Register.html");
-        Thread.sleep(5000);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
 
         driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Adnys");
         driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Lougan");
@@ -22,7 +23,6 @@ public class PrimeiroExemploSelenium {
         driver.findElement(By.xpath("//input[@value='Male']")).click();
         driver.findElement(By.xpath("//input[@id='checkbox2']")).click();
         driver.findElement(By.id("msdd")).click();
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[contains(text(),'Portuguese')]")).click();
         driver.findElement(By.xpath("//*[contains(text(),'Hobbies')]")).click();
         driver.findElement(By.id("Skills")).click();
@@ -39,7 +39,6 @@ public class PrimeiroExemploSelenium {
         driver.findElement(By.id("secondpassword")).sendKeys("000111222");
         driver.findElement(By.xpath("//button[@id='submitbtn']")).click();
 
-        Thread.sleep(10000);
         driver.quit();
     }
 
