@@ -16,7 +16,6 @@ public class PrimeiroExemploSelenium {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
 
         driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Adnys");
-        driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Lougan");
         driver.findElement(By.xpath("//textarea[@ng-model='Adress']")).sendKeys("Rua: Rio Grande do Sul n399 Nova Olimpia - pr");
         driver.findElement(By.xpath("//input[@type='email']")).sendKeys("qaautomatizando@test.com.br");
         driver.findElement(By.xpath("//input[@ng-model='Phone']")).sendKeys("1234567890");
