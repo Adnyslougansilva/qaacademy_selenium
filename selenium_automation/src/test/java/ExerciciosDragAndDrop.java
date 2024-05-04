@@ -21,16 +21,15 @@ public class ExerciciosDragAndDrop {
         driver.get("https://demo.automationtesting.in/Static.html");
     }
     @Test
-    public void testeDragAnDrop() {
-        WebElement draggable = driver.findElement(By.id("draggable"));//img[@id='angular']
-        WebElement droppable = driver.findElement(By.id("droppable"));
-        new Actions(driver)
-                .dragAndDrop(draggable, droppable)
-                .perform();
+    public void testeDragAnDrop(){
+        WebElement iconeElemento = driver.findElement(By.xpath("//img[@src='selenium.png']"));
+        WebElement destino = driver.findElement(By.id("droparea"));
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(iconeElemento,destino).perform();
     }
 
     @After
     public void after(){
-        driver.quit();
+    //driver.quit();
     }
 }
